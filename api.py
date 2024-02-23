@@ -83,6 +83,8 @@ if radio == "Overall":
     main = g.copy()
     if op1 == 'price':
         g = df[op1].value_counts().reset_index().sort_values(by='price', ascending=True)
+
+    main['percentage'] = g['count'].apply(lambda x : x*100/df.shape[0])
     
     col1, col2 = st.columns(2)
     with col1:
