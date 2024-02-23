@@ -169,6 +169,10 @@ elif radio == "Products":
         st.text(f"Price = {price}rs")
         st.text(f"Total Sold Product Count = {g.shape[0]}")
 
+    if senti[senti['sku'] == sku]['sentiment'].drop_duplicates(ignore_index=True)[0] == 0: s = "Bad"
+    else : s = "Good"
+    st.text(f"Product Review by customer -> {s}")
+
     st.markdown("---")
     
 
