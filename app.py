@@ -99,7 +99,7 @@ if radio == "Overall":
         st.plotly_chart(get_pie(g))
 
 
-    st.title("Sentiment Review")
+    st.title("Sentiment Reviews")
 
     col1, col2 = st.columns(spec=2)
 
