@@ -1,4 +1,4 @@
-
+# this is independent folder
 # this app will be running on other laptop, who is in same network as, cause in streamlit will be hosted on this laptop
 
 from langchain.prompts import PromptTemplate
