@@ -6,10 +6,10 @@ import random
 
 import pandas as pd
 import numpy as np
-df = pd.read_csv("./clean_reviews.csv")
+df = pd.read_csv("./datasets/clean_reviews.csv")
 
 # dataframe for sentimental analysis 
-senti = pd.read_csv("sentiment_reviews.csv")
+senti = pd.read_csv("./datasets/sentiment_reviews.csv")
 good = senti[senti['sentiment'] == 1]
 bad = senti[senti['sentiment'] == 0]
 
