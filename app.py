@@ -104,7 +104,7 @@ if radio == "Overall":
     col1, col2 = st.columns(spec=2)
 
     with col1:
-        st.text("Positive vs Negative")
+        st.text("Positive Review vs Negative Review ")
         if op1 == "price":
             fig1 = get_line(good[op1].value_counts().reset_index().sort_values(by='price', ascending=True))
             fig1.update_traces(line=dict(color = 'rgb(255,255,255)'))
@@ -119,7 +119,7 @@ if radio == "Overall":
             st.plotly_chart(go.Figure(data=fig1.data + fig2.data))
 
     with col2:
-        st.text("Negative Graph")
+        st.text("Negative Review Graph")
         if op1 == "price":
             st.plotly_chart(get_line(bad[op1].value_counts().reset_index().sort_values(by='price', ascending=True)))
         else:
