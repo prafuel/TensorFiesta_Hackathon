@@ -7,5 +7,28 @@ Analyzing customer reviews using sentiment analysis to derive a Good Factor Inde
 ## Who are we...?
 This is Our Certificate of Appreciation
 ![](https://github.com/prafuel/TensorFiesta_Hackathon/blob/main/screenshots/Tensorfiesta.jpg)
-Currently studying in Third Year in VIT Pune
 ![](https://github.com/prafuel/TensorFiesta_Hackathon/blob/main/screenshots/1.jpg)
+
+### OK Fine lets Talk about solution and this repo
+so in this repo there is python script named app.py, which content all the streamlit code, also jupyter notebooks where we worked to get insight from, follow following steps to run this app locally on your machine...
+
+Firstly clone this repo
+```
+git clone https://github.com/prafuel/TensorFiesta_Hackathon.git
+cd TensorFiesta_Hackathon
+```
+Install all the dependency (Bro tip : Use virtual enviroment)
+``` 
+pip install requirements.txt
+```
+Lastly Run
+```
+streamlit run app.py
+```
+UI is very self explanatory and just go through source code, dataset is also available if needed just get it, there will be clean_dataset too                         
+
+To Learn About this app, click here to watch demo video <br>
+```https://drive.google.com/file/d/1CMsaR_l79i10w_3Qjj_CsZeaIukGqoW_/view?usp=sharing```
+
+In Future we are also working to add llm pretrained model to fetch details about all the graphs in easily understandable by any human and get business insight from it
+### Stay Tunned...
