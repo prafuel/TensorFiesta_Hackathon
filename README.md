@@ -19,7 +19,7 @@ cd TensorFiesta_Hackathon
 ```
 Install all the dependency (Bro tip : Use virtual enviroment)
 ``` 
-pip install requirements.txt
+pip -r install requirements.txt
 ```
 Lastly Run
 ```
