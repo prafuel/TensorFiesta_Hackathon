@@ -6,7 +6,7 @@ What type of hackathon is this? This hackathon was organized by GDSC (Google Dev
 Analyzing customer reviews using sentiment analysis to derive a Good Factor Index, categorizing products by type and state, and evaluating state-wise product performance to identify reasons for low sales or negative feedback, aiming to propose targeted strategies for improvement
 ## Who are we...?
 This is Our Certificate of Appreciation
-![](https://github.com/prafuel/TensorFiesta_Hackathon/blob/main/screenshots/Tensorfiesta.jpg)
+![](https://github.com/prafuel/TensorFiesta_Hackathon/blob/main/screenshots/TensorFiestaCerti.jpg)
 ![](https://github.com/prafuel/TensorFiesta_Hackathon/blob/main/screenshots/1.jpg)
 
 ### OK Fine lets Talk about solution and this repo
