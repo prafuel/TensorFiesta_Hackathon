@@ -6,7 +6,24 @@ import random
 
 import pandas as pd
 import numpy as np
+
+
 df = pd.read_csv("./datasets/clean_reviews.csv")
+
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+import google.generativeai as genai
+genai.configure(api_key=os.environ['GEMINI_API_TOKEN'])
+
+model = genai.GenerativeModel('gemini-pro')
+
+def get_insight(df:pd.DataFrame, x_label:str, y_label:str):
+    prompt = f'''{np.array(df)} based on the provided array, your task is to analys it in term of business point of view, by considering x_lable={x_label} which is feature1, and y_label={y_label} which is number of sold product at that price, give me insight on it in following format: 1] <insight point>, give at least 4 point of analysis and next 2-3 points for solution'''
+    result = model.generate_content(prompt)
+    return result.text.replace("*","")
+
 
 # dataframe for sentimental analysis 
 senti = pd.read_csv("./datasets/sentiment_reviews.csv")
@@ -142,6 +159,10 @@ if radio == "Overall":
             st.plotly_chart(get_pie(bad[op1].value_counts().reset_index().sort_values(by='price', ascending=True)))
         else:
             st.plotly_chart(get_pie(bad[op1].value_counts().reset_index()))
+
+    
+    if st.button("Get Insights"):
+        st.code(f'''x_label = {op1} y_label = Count\n{get_insight(main, op1, 'count')}''')
 
 
     st.markdown("---")

@@ -2,8 +2,6 @@
 # this app will be running on other laptop, who is in same network as, cause in streamlit will be hosted on this laptop
 
 from langchain.prompts import PromptTemplate
-# from langchain_community.llms import huggingface_hub
-from langchain.chains import LLMChain
 
 
 from flask import Flask, request, render_template
