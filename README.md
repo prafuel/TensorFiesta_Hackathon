@@ -34,7 +34,7 @@ In Future we are also working to add llm pretrained model to fetch details about
 ### Stay Tunned...
 
 Contributor: <br>
-[Bhushan Sonsale](https://github.com/bhushansonsale09) <br>
 [Prafull Sonawane](https://github.com/prafuel) <br> 
+[Bhushan Sonsale](https://github.com/bhushansonsale09) <br>
 [Avadhoot Sutar](https://github.com/avashoot) <br> 
 [Rahul Kumbhar](https://github.com/prafuel) <br>
