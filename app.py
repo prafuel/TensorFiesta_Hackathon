@@ -44,10 +44,13 @@ import requests
 
 def product_img_url(url: str):
     res = requests.get(url)
+    if(res.status_code != 200) : return
     soup = BeautifulSoup(res.content, 'lxml')
     img = soup.findAll('img')[4]
     # print(img['src'])
     return img['src']
+    
+
 
 def get_line(df: pd.DataFrame):
     col = df.columns
@@ -70,14 +73,16 @@ def print_cols(hero):
     for col in st.columns(spec=hero.shape[0]):
         with col:
             name, url, sku, price = np.array(df[df['sku'] == hero[index]][['product_name', 'url','sku', 'price']].drop_duplicates()).reshape(-1)
-            
-            res = requests.get(url)
-            soup = BeautifulSoup(res.content, 'lxml')
-            img = soup.findAll('img')[5]['src']
-            # st.text(img)
+
+            img = product_img_url(url)
             st.image(img,caption=name+" : "+str(price)+"rs", use_column_width=True)
             st.text(f"{sku}")
         index += 1
+
+def object_insights():
+    with st.spinner("Just a Sec..."):
+        if st.button("Get Insights"):
+            st.code(f'''x_label = {op1} y_label = Count\n{get_insight(main, op1, 'count')}''')
 
 # st.title("Text Analysis")
 radio = st.sidebar.radio(
@@ -160,10 +165,7 @@ if radio == "Overall":
         else:
             st.plotly_chart(get_pie(bad[op1].value_counts().reset_index()))
 
-    
-    if st.button("Get Insights"):
-        st.code(f'''x_label = {op1} y_label = Count\n{get_insight(main, op1, 'count')}''')
-
+    object_insights()
 
     st.markdown("---")
 
@@ -181,7 +183,6 @@ elif radio == "Products":
         res = requests.get(url)
         soup = BeautifulSoup(res.content, 'lxml')
         img = soup.findAll('img')[5]['src']
-        # st.text(img)
         st.image(img, caption=name+" "+str(price)+"rs", use_column_width=True)
 
     with col3:
