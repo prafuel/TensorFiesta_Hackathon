@@ -3,6 +3,8 @@ import requests
 from bs4 import BeautifulSoup
 
 import random
+import streamlit as st
+st.set_page_config(layout='wide')
 
 import pandas as pd
 import numpy as np
@@ -10,19 +12,19 @@ import numpy as np
 
 df = pd.read_csv("./datasets/clean_reviews.csv")
 
-import os
-from dotenv import load_dotenv
-load_dotenv()
+# import os
+# from dotenv import load_dotenv
+# load_dotenv()
 
-import google.generativeai as genai
-genai.configure(api_key=os.environ['GEMINI_API_TOKEN'])
+# import google.generativeai as genai
+# genai.configure(api_key=os.environ['GEMINI_API_TOKEN'])
 
-model = genai.GenerativeModel('gemini-pro')
+# model = genai.GenerativeModel('gemini-pro')
 
-def get_insight(df:pd.DataFrame, x_label:str, y_label:str):
-    prompt = f'''{np.array(df)} based on the provided array, your task is to analys it in term of business point of view, by considering x_lable={x_label} which is feature1, and y_label={y_label} which is number of sold product at that price, give me insight on it in following format: 1] <insight point>, give at least 4 point of analysis and next 2-3 points for solution'''
-    result = model.generate_content(prompt)
-    return result.text.replace("*","")
+# def get_insight(df:pd.DataFrame, x_label:str, y_label:str):
+#     prompt = f'''{np.array(df)} based on the provided array, your task is to analys it in term of business point of view, by considering x_lable={x_label} which is feature1, and y_label={y_label} which is number of sold product at that price, give me insight on it in following format: 1] <insight point>, give at least 4 point of analysis and next 2-3 points for solution'''
+#     result = model.generate_content(prompt)
+#     return result.text.replace("*","")
 
 
 # dataframe for sentimental analysis 
@@ -36,8 +38,6 @@ plt.style.use('ggplot')
 
 import plotly.express as px
 
-import streamlit as st
-st.set_page_config(layout='wide')
 
 from bs4 import BeautifulSoup
 import requests
@@ -165,7 +165,7 @@ if radio == "Overall":
         else:
             st.plotly_chart(get_pie(bad[op1].value_counts().reset_index()))
 
-    object_insights()
+    # object_insights()
 
     st.markdown("---")
 
