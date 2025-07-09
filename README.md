@@ -37,4 +37,4 @@ Contributor: <br>
 [Prafull Sonawane](https://github.com/prafuel) <br> 
 [Avadhoot Sutar](https://github.com/avashoot) <br> 
 [Bhushan Sonsale](https://github.com/bhushansonsale09) <br>
-[Rahul Kumbhar](https://github.com/prafuel) <br>
+[Rahul Kumbhar](https://github.com/rahulkumbhar21) <br>
